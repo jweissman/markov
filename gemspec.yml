@@ -1,6 +1,6 @@
 name: markov
-summary: "TODO: Summary"
-description: "TODO: Description"
+summary: "markov chains"
+description: "markov chain management"
 license: MIT
 authors: Joseph Weissman
 email: jweissman1986@gmail.com
