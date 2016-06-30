@@ -72,15 +72,7 @@ module Markov
       word = nil
 
       until max && (generated_count +=1)>=max
-        if new_words
-          word = @words.first
-          until !@words.include?(word.chomp) && word.chomp.match(/^[A-Z][a-z]+$/)
-            word = (generate_word!) #.chomp #(context: generated_text)
-          end
-          @words.push(word.chomp)
-        else
-          word = generate_word!(context: generated_text)
-        end
+        word = generate_word!(context: new_words ? ["\n"] : generated_text)
 
         if show
           word.chars.each do |ch|
@@ -97,10 +89,24 @@ module Markov
     end
 
     def generate_word!(context: ["\n"])
+      if new_words
+        word = @words.first
+        until !@words.include?(word.chomp) && word.chomp.match(/^[A-Z][a-z]+$/)
+          word = (generate_any_word!) #.chomp #(context: generated_text)
+        end
+        @words.push(word.chomp)
+        word
+      else
+        generate_any_word!(context: context) #generated_text)
+      end    
+    end
+
+    private
+    def generate_any_word!(context: ["\n"])
       generated_chars = []
       char = ''
       until char.match(/[ .,;!?\n]/)
-	char = predict_next_state(context+generated_chars)
+        char = predict_next_state(context+generated_chars)
         generated_chars.push(char)
       end
       generated_chars.join
