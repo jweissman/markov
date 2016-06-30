@@ -6,6 +6,13 @@ authors: Joseph Weissman
 email: jweissman1986@gmail.com
 homepage: https://rubygems.org/gems/markov
 
+dependencies:
+  thor: ~> 0.19
+  ruby-progressbar: ~> 1.8
+  oj: ~> 2.16 
+  sinatra: ~> 1.4
+  thin: ~> 1.5
+
 development_dependencies:
   bundler: ~> 1.10
   codeclimate-test-reporter: ~> 0.1
