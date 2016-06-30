@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    markov (0.1.1)
+    markov-rb (0.1.1)
       oj (~> 2.16)
       ruby-progressbar (~> 1.8)
       sinatra (~> 1.4)
@@ -92,7 +92,7 @@ DEPENDENCIES
   codeclimate-test-reporter (~> 0.1)
   cucumber (~> 0.10.2)
   kramdown
-  markov!
+  markov-rb!
   oj
   pry
   rake (~> 10.0)

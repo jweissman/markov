@@ -1,4 +1,4 @@
-name: markov
+name: markov-rb
 summary: "markov chains"
 description: "markov chain management"
 license: MIT
