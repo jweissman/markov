@@ -8,15 +8,20 @@
 
 ## Description
 
-TODO: Description
+Character-oriented Markov processes for text generation
 
 ## Features
 
 ## Examples
 
     require 'markov'
+    chain = Markov::Chain.new
+    chain.parse(File.read("data/war-and-peace.txt"))
+    chain.generate! # => "..."
 
 ## Requirements
+
+  - Ruby 2.3.0
 
 ## Install
 
